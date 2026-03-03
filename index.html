@@ -3,44 +3,243 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Revolucionarni sistem za merenje prinosa meda</title></title>
+<title>Honey Yield Measurement System</title>
 
 <style>
 body {font-family: Arial, sans-serif; margin:0; padding:20px; background:#f4f6f8;}
 .container {max-width:950px; margin:auto; background:white; padding:40px; border-radius:16px; box-shadow:0 8px 24px rgba(0,0,0,0.08);}
-h1 {font-size:28px; color:#0b3d91;}
+h1 {font-size:32px; color:#0b3d91; margin-bottom:10px;}
 h2 {margin-top:35px; font-size:22px; color:#0b3d91;}
-.badge {display:inline-block; padding:6px 14px; background:#e6ecf8; color:#0b3d91; border-radius:20px; font-size:13px; margin-bottom:20px;}
+.badge {display:inline-block; padding:8px 16px; background:#e6ecf8; color:#0b3d91; border-radius:20px; font-size:13px; margin-bottom:25px; font-weight:bold;}
 ul {padding-left:22px;}
 li {margin-bottom:6px;}
 select {padding:10px; border-radius:8px; margin-bottom:25px; font-size:14px;}
 .button {display:inline-block; margin-top:20px; padding:14px 22px; background:#0b3d91; color:white; text-decoration:none; border-radius:10px; font-weight:bold;}
+.hero-sub {font-size:18px; font-weight:bold; margin-bottom:15px;}
+.highlight {font-weight:bold; font-size:18px;}
 </style>
 
 <script>
 const translations = {
+
 en:{
-title:"Revolucionarni sistem za merenje prinosa meda",
+title:"Revolutionary Honey Yield Measurement System",
 patent:"Patent Pending – Serbia",
-intro1:"Thank you for your interest.",
-intro2:"Unlike conventional scales that measure total hive weight, this system enables selective honey super measurement, with optional full hive measurement when required.",
-features:["Precise honey yield monitoring via mobile phone","Automatic notification when preset weight (kg) is reached","Clear and reliable production analysis"],
-solar:"Operates continuously (24/7) powered by solar panel.",
+intro1:"Finally isolates honey production from total hive mass.",
+intro2:"Designed for professional beekeeping operations and scalable manufacturing partnerships.",
+features:[
+"Selective honey super measurement",
+"Automatic harvest notification",
+"Clear production analytics via mobile phone"
+],
+solar:"Continuous 24/7 operation powered by solar panel.",
 advantagesTitle:"Technical & Commercial Advantages",
-advantages:["Industrial-ready design","Standardized assembly and calibration","Integrated mechanical and electronic solution","Solar-powered continuous operation","300%+ margin potential","Scalable production model"],
+advantages:[
+"Industrial-ready design",
+"Integrated mechanical and electronic solution",
+"Solar-powered autonomous system",
+"300%+ margin potential",
+"Scalable EU production model",
+"Exclusive territorial licensing opportunity"
+],
 cooperationTitle:"Cooperation Model",
-cooperationText:"Seeking territorial partner for manufacturing, distribution and patent protection in their territory. Cooperation based on territorial license, advance payment and per-unit royalty. Exclusive rights subject to minimum annual production volumes. Technology holder retains production rights in Serbia. Detailed documentation available under NDA.",
+cooperationText:"Seeking exclusive territorial manufacturing partner. Model includes advance payment, per-unit royalty and patent protection per territory. Designed for scalable European distribution with high-margin positioning. Detailed documentation available under NDA.",
 contact:"Contact"
 },
+
 sr:{
-title:"Dedicated Honey Super Weight Measurement System",
+title:"Revolucionarni sistem za merenje prinosa meda",
 patent:"Patent u postupku – Srbija",
-intro1:"Hvala na interesovanju.",
-intro2:"Za razliku od konvencionalnih vaga koje mere ukupnu masu košnice, ovaj sistem omogućava selektivno merenje medišnog nastavka uz opciju merenja cele košnice.",
-features:["Precizno praćenje prinosa putem mobilnog telefona","Automatsko obaveštenje pri zadatoj težini (kg)","Jasna analiza proizvodnje"],
+intro1:"Po prvi put izdvaja prinos meda od ukupne mase košnice.",
+intro2:"Projektovan za profesionalne pčelare i skalabilnu proizvodnju.",
+features:[
+"Selektivno merenje medišnog nastavka",
+"Automatsko obaveštenje o trenutku vrcanja",
+"Praćenje prinosa putem mobilnog telefona"
+],
 solar:"Neprekidan rad (24/7) uz solarno napajanje.",
 advantagesTitle:"Tehničke i komercijalne prednosti",
-advantages:["Industrijski spreman dizajn","Standardizovana montaža i kalibracija","Integrisano mehaničko i elektronsko rešenje","Solarno napajanje","Potencijal marže 300%+","Skalabilna proizvodnja"],
+advantages:[
+"Industrijski spreman dizajn",
+"Integrisano mehaničko i elektronsko rešenje",
+"Solarni autonomni sistem",
+"Potencijal marže 300%+",
+"Skalabilan model proizvodnje",
+"Ekskluzivna teritorijalna licenca"
+],
+cooperationTitle:"Model saradnje",
+cooperationText:"Traži se ekskluzivni partner za teritorijalnu proizvodnju. Model uključuje avans, royalty po komadu i zaštitu patenta po teritoriji. Predviđeno za skalabilnu distribuciju sa visokom maržom. Detaljna dokumentacija dostupna uz NDA.",
+contact:"Kontakt"
+},
+
+de:{
+title:"Revolutionäres System zur Honigertragsmessung",
+patent:"Patent angemeldet – Serbien",
+intro1:"Erstmals getrennte Messung des Honigertrags vom Gesamtgewicht.",
+intro2:"Für professionelle Imkerei und skalierbare Produktion konzipiert.",
+features:[
+"Selektive Honigraum-Messung",
+"Automatische Erntebenachrichtigung",
+"Mobile Produktionsanalyse"
+],
+solar:"24/7 Betrieb mit Solarpanel.",
+advantagesTitle:"Technische & Kommerzielle Vorteile",
+advantages:[
+"Industriefähiges Design",
+"Integrierte mechanisch-elektronische Lösung",
+"Solarbetrieb",
+"300%+ Margenpotenzial",
+"Skalierbare Produktion",
+"Exklusive territoriale Lizenz"
+],
+cooperationTitle:"Kooperationsmodell",
+cooperationText:"Gesucht wird ein exklusiver territorialer Produktionspartner. Modell mit Vorauszahlung, Lizenzgebühr pro Einheit und Patentschutz pro Gebiet. Dokumentation nach NDA.",
+contact:"Kontakt"
+},
+
+fr:{
+title:"Système révolutionnaire de mesure du rendement du miel",
+patent:"Brevet en cours – Serbie",
+intro1:"Isole le rendement du miel du poids total de la ruche.",
+intro2:"Conçu pour l'apiculture professionnelle et la production évolutive.",
+features:[
+"Mesure sélective de la hausse",
+"Notification automatique de récolte",
+"Analyse mobile de production"
+],
+solar:"Fonctionnement continu 24/7 via panneau solaire.",
+advantagesTitle:"Avantages techniques et commerciaux",
+advantages:[
+"Design prêt pour production industrielle",
+"Solution mécanique et électronique intégrée",
+"Alimentation solaire",
+"Potentiel de marge 300%+",
+"Production évolutive",
+"Licence territoriale exclusive"
+],
+cooperationTitle:"Modèle de coopération",
+cooperationText:"Recherche partenaire territorial exclusif. Modèle avec avance, redevance par unité et protection brevet locale. Documentation sous NDA.",
+contact:"Contact"
+},
+
+it:{
+title:"Sistema rivoluzionario di misurazione della produzione di miele",
+patent:"Brevetto in corso – Serbia",
+intro1:"Isola la produzione di miele dal peso totale dell’arnia.",
+intro2:"Progettato per apicoltura professionale e produzione scalabile.",
+features:[
+"Misurazione selettiva del melario",
+"Notifica automatica di raccolta",
+"Analisi produzione via mobile"
+],
+solar:"Funzionamento continuo 24/7 con pannello solare.",
+advantagesTitle:"Vantaggi tecnici e commerciali",
+advantages:[
+"Design pronto per produzione industriale",
+"Soluzione meccanica ed elettronica integrata",
+"Alimentazione solare",
+"Potenziale margine 300%+",
+"Produzione scalabile",
+"Licenza territoriale esclusiva"
+],
+cooperationTitle:"Modello di cooperazione",
+cooperationText:"Ricerca partner esclusivo territoriale. Anticipo, royalty per unità e protezione brevetto locale. Documentazione sotto NDA.",
+contact:"Contatto"
+},
+
+es:{
+title:"Sistema revolucionario de medición del rendimiento de miel",
+patent:"Patente en trámite – Serbia",
+intro1:"Aísla la producción de miel del peso total de la colmena.",
+intro2:"Diseñado para apicultura profesional y producción escalable.",
+features:[
+"Medición selectiva del alza",
+"Notificación automática de cosecha",
+"Análisis de producción móvil"
+],
+solar:"Funcionamiento continuo 24/7 con panel solar.",
+advantagesTitle:"Ventajas técnicas y comerciales",
+advantages:[
+"Diseño listo para producción industrial",
+"Solución mecánica y electrónica integrada",
+"Energía solar",
+"Potencial de margen 300%+",
+"Producción escalable",
+"Licencia territorial exclusiva"
+],
+cooperationTitle:"Modelo de cooperación",
+cooperationText:"Se busca socio territorial exclusivo. Pago inicial, royalty por unidad y protección de patente local. Documentación bajo NDA.",
+contact:"Contacto"
+}
+
+};
+
+function applyLanguage(lang){
+const t = translations[lang] || translations["en"];
+document.getElementById("title").innerText = t.title;
+document.getElementById("patent").innerText = t.patent;
+document.getElementById("intro1").innerText = t.intro1;
+document.getElementById("intro2").innerText = t.intro2;
+
+let features = "";
+t.features.forEach(f => features += "<li>"+f+"</li>");
+document.getElementById("features").innerHTML = features;
+
+document.getElementById("solar").innerText = t.solar;
+document.getElementById("advantagesTitle").innerText = t.advantagesTitle;
+
+let adv = "";
+t.advantages.forEach(a => adv += "<li>"+a+"</li>");
+document.getElementById("advantages").innerHTML = adv;
+
+document.getElementById("cooperationTitle").innerText = t.cooperationTitle;
+document.getElementById("cooperationText").innerText = t.cooperationText;
+document.getElementById("contactLabel").innerText = t.contact;
+}
+
+window.onload = function(){ applyLanguage("en"); };
+</script>
+</head>
+
+<body>
+<div class="container">
+
+<select onchange="applyLanguage(this.value)">
+<option value="en">English</option>
+<option value="de">Deutsch</option>
+<option value="fr">Français</option>
+<option value="it">Italiano</option>
+<option value="es">Español</option>
+<option value="sr">Srpski</option>
+</select>
+
+<h1 id="title"></h1>
+<div class="badge" id="patent"></div>
+
+<p class="hero-sub" id="intro1"></p>
+<p id="intro2"></p>
+
+<ul id="features"></ul>
+
+<p class="highlight" id="solar"></p>
+
+<h2 id="advantagesTitle"></h2>
+<ul id="advantages"></ul>
+
+<h2 id="cooperationTitle"></h2>
+<p id="cooperationText"></p>
+
+<h2 id="contactLabel"></h2>
+
+<a class="button" href="mailto:honeysupers78@gmail.com?subject=Honey Super System Inquiry">Send Email</a>
+
+<p style="margin-top:20px;">
+honeysupers78@gmail.com
+</p>
+
+</div>
+</body>
+</html>advantages:["Industrijski spreman dizajn","Standardizovana montaža i kalibracija","Integrisano mehaničko i elektronsko rešenje","Solarno napajanje","Potencijal marže 300%+","Skalabilna proizvodnja"],
 cooperationTitle:"Model saradnje",
 cooperationText:"Traži se partner po teritoriji za proizvodnju, distribuciju i patentnu zaštitu. Saradnja zasnovana na teritorijalnoj licenci, avansu i royalty modelu. Ekskluziva uz minimalne godišnje količine. Nosilac tehnologije zadržava prava u Srbiji. Dokumentacija dostupna uz NDA.",
 contact:"Kontakt"
