@@ -2,360 +2,60 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Honey Yield Measurement System</title>
 
 <style>
 body{
 font-family: Arial, sans-serif;
-margin:40px;
+margin:0;
 background:#f5f5f5;
+text-align:center;
 }
 
 .container{
-max-width:900px;
+max-width:800px;
 margin:auto;
+padding:20px;
 background:white;
-padding:40px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
 h1{
-text-align:center;
+font-size:26px;
 }
 
-.lang-buttons{
-text-align:center;
-margin-bottom:30px;
+h2{
+color:#d89c00;
 }
 
-button{
-margin:4px;
-padding:8px 12px;
-border:none;
-background:#2c6bed;
-color:white;
-border-radius:5px;
-cursor:pointer;
-}
-
-button:hover{
-background:#1f4db0;
+select{
+padding:10px;
+font-size:16px;
+margin:15px;
 }
 
 ul{
-margin-top:5px;
+text-align:left;
+max-width:600px;
+margin:auto;
 }
 
+@media (max-width:600px){
+h1{font-size:20px;}
+}
 </style>
-
-<script>
-
-const texts = {
-
-en:{
-title:"FIRST SYSTEM THAT SEPARATES HONEY YIELD FROM TOTAL HIVE MASS",
-award:"1st Prize – XVII National Beekeeping Fair 2026",
-patent:"PATENT PENDING – A patent application has been filed in Serbia.",
-system:"REVOLUTIONARY HONEY YIELD MEASUREMENT SYSTEM",
-desc:"For the first time enables separation of honey yield from total hive mass.",
-prototype:"PROTOTYPE",
-prototype_text:"Unique scale that measures only the hive body, individual supers, or the entire hive.",
-use:"HOW TO USE?",
-use1:"Reading via SMS or call",
-use2:"Automatic alerts when target weight is reached or battery is low",
-adv:"TECHNICAL ADVANTAGES",
-adv1:"Steel, robust construction",
-adv2:"Compatible with all hive types",
-adv3:"Unlimited operation with solar panel",
-security:"SECURITY",
-sec1:"Protection against unauthorized use",
-end1:"Unique solution in the world",
-end2:"Easy to operate",
-end3:"Modular expandable system"
-},
-
-sl:{
-title:"PRVI SISTEM, KI LOČUJE DONOS MEDU OD SKUPNE MASE PANJA",
-award:"1. nagrada – XVII državni čebelarski sejem 2026",
-patent:"PATENT V POSTOPKU PRIJAVE – Patentna prijava je bila vložena v Srbiji.",
-system:"REVOLUCIONARNI SISTEM ZA MERJENJE DONOSA MEDU",
-desc:"Prvič omogoča ločevanje donosa medu od skupne mase panja.",
-prototype:"PROTOTIP",
-prototype_text:"Edinstvena tehtnica, ki meri samo telo panja, posamezne mediščne naklade ali celoten panj.",
-use:"KAKO SE UPORABLJA?",
-use1:"Odčitavanje preko SMS ali klica",
-use2:"Samodejna obvestila ob doseženi teži ali nizki bateriji",
-adv:"TEHNIČNE PREDNOSTI",
-adv1:"Jeklena robustna konstrukcija",
-adv2:"Združljivo z vsemi tipi panjev",
-adv3:"Delovanje s solarnim panelom",
-security:"VARNOST",
-sec1:"Zaščita pred nepooblaščeno uporabo",
-end1:"Edinstvena rešitev na svetu",
-end2:"Enostavna uporaba",
-end3:"Modularni sistem"
-},
-
-de:{
-title:"ERSTES SYSTEM ZUR TRENNUNG DES HONIGERTRAGS VON DER GESAMTBIENENSTOCKMASSE",
-award:"1. Preis – XVII Nationale Imkermesse 2026",
-patent:"PATENT ANGEMELDET – Patentanmeldung in Serbien eingereicht.",
-system:"REVOLUTIONÄRES SYSTEM ZUR MESSUNG DES HONIGERTRAGS",
-desc:"Ermöglicht erstmals die Trennung des Honigertrags von der Gesamtmasse.",
-prototype:"PROTOTYP",
-prototype_text:"Einzigartige Waage zur Messung des Bienenstockkörpers oder der Honigräume.",
-use:"ANWENDUNG",
-use1:"Ablesen per SMS oder Anruf",
-use2:"Automatische Warnungen bei Zielgewicht oder niedriger Batterie",
-adv:"TECHNISCHE VORTEILE",
-adv1:"Robuste Stahlkonstruktion",
-adv2:"Kompatibel mit allen Beutentypen",
-adv3:"Solarbetrieb möglich",
-security:"SICHERHEIT",
-sec1:"Schutz vor unbefugter Nutzung",
-end1:"Einzigartige Lösung weltweit",
-end2:"Einfach zu bedienen",
-end3:"Modulares System"
-},
-
-it:{
-title:"PRIMO SISTEMA CHE SEPARA LA PRODUZIONE DI MIELE DALLA MASSA TOTALE DELL’ALVEARE",
-award:"1° Premio – XVII Fiera Nazionale Apicoltura 2026",
-patent:"BREVETTO IN CORSO – Domanda di brevetto presentata in Serbia.",
-system:"SISTEMA RIVOLUZIONARIO DI MISURAZIONE DEL MIELE",
-desc:"Per la prima volta separa la resa di miele dalla massa totale dell'alveare.",
-prototype:"PROTOTIPO",
-prototype_text:"Bilancia unica che misura il corpo dell’alveare o i melari.",
-use:"COME USARE",
-use1:"Lettura tramite SMS o chiamata",
-use2:"Avvisi automatici per peso target o batteria bassa",
-adv:"VANTAGGI TECNICI",
-adv1:"Costruzione in acciaio",
-adv2:"Compatibile con tutti gli alveari",
-adv3:"Funzionamento con pannello solare",
-security:"SICUREZZA",
-sec1:"Protezione contro uso non autorizzato",
-end1:"Soluzione unica al mondo",
-end2:"Facile da usare",
-end3:"Sistema modulare"
-},
-
-hu:{
-title:"AZ ELSŐ RENDSZER, AMELY ELKÜLÖNÍTI A MÉZHOZAMOT A KAPTÁR TELJES TÖMEGÉTŐL",
-award:"1. díj – XVII Országos Méhészeti Vásár 2026",
-patent:"SZABADALOM FOLYAMATBAN – Szerbiában benyújtva.",
-system:"FORRADALMI MÉZHOZAM MÉRŐ RENDSZER",
-desc:"Először teszi lehetővé a mézhozam elkülönítését.",
-prototype:"PROTOTÍPUS",
-prototype_text:"Egyedi mérleg a kaptár vagy méztér mérésére.",
-use:"HASZNÁLAT",
-use1:"SMS vagy hívás",
-use2:"Automatikus riasztások",
-adv:"MŰSZAKI ELŐNYÖK",
-adv1:"Acél szerkezet",
-adv2:"Minden kaptárhoz",
-adv3:"Napelemmel működik",
-security:"BIZTONSÁG",
-sec1:"Védelem illetéktelen használat ellen",
-end1:"Egyedi megoldás",
-end2:"Egyszerű használat",
-end3:"Moduláris rendszer"
-},
-
-ro:{
-title:"PRIMUL SISTEM CARE SEPARĂ PRODUCȚIA DE MIERE DE MASA TOTALĂ A STUPULUI",
-award:"Premiul I – Târgul Național Apicol 2026",
-patent:"BREVET ÎN CURS – Depus în Serbia.",
-system:"SISTEM REVOLUȚIONAR DE MĂSURARE A PRODUCȚIEI DE MIERE",
-desc:"Separă producția de miere de masa totală.",
-prototype:"PROTOTIP",
-prototype_text:"Cântar unic pentru stup.",
-use:"UTILIZARE",
-use1:"Citire prin SMS sau apel",
-use2:"Alerte automate",
-adv:"AVANTAJE TEHNICE",
-adv1:"Construcție din oțel",
-adv2:"Compatibil cu toate stupinele",
-adv3:"Funcționare solară",
-security:"SECURITATE",
-sec1:"Protecție împotriva utilizării neautorizate",
-end1:"Soluție unică",
-end2:"Ușor de utilizat",
-end3:"Sistem modular"
-},
-
-zh:{
-title:"世界首个将蜂蜜产量与蜂箱总重量分离的系统",
-award:"一等奖 – 2026年第17届国家养蜂博览会",
-patent:"专利申请中 – 已在塞尔维亚提交。",
-system:"革命性蜂蜜产量测量系统",
-desc:"首次实现蜂蜜产量与蜂箱总重量分离。",
-prototype:"原型",
-prototype_text:"独特的蜂箱称重系统。",
-use:"使用方式",
-use1:"短信或电话读取数据",
-use2:"重量达到或电池低时自动提醒",
-adv:"技术优势",
-adv1:"钢制结构",
-adv2:"兼容所有蜂箱",
-adv3:"太阳能供电",
-security:"安全",
-sec1:"防止未经授权使用",
-end1:"世界独特解决方案",
-end2:"易于操作",
-end3:"模块化系统"
-},
-
-hr:{
-title:"PRVI SISTEM KOJI ODVAJA PRINOS MEDA OD UKUPNE MASE KOŠNICE",
-award:"1. nagrada – XVII Nacionalni pčelarski sajam 2026",
-patent:"PATENT U POSTUPKU – prijavljen u Srbiji.",
-system:"REVOLUCIONARNI SUSTAV MJERENJA MEDA",
-desc:"Omogućuje odvajanje prinosa meda.",
-prototype:"PROTOTIP",
-prototype_text:"Jedinstvena vaga za košnice.",
-use:"KAKO SE KORISTI",
-use1:"Očitavanje SMS ili pozivom",
-use2:"Automatske obavijesti",
-adv:"TEHNIČKE PREDNOSTI",
-adv1:"Čelična konstrukcija",
-adv2:"Kompatibilno sa svim košnicama",
-adv3:"Solarni rad",
-security:"SIGURNOST",
-sec1:"Zaštita od neovlaštene upotrebe",
-end1:"Jedinstveno rješenje",
-end2:"Jednostavno korištenje",
-end3:"Modularni sustav"
-},
-
-sr:{
-title:"PRVI SISTEM KOJI ODVAJA PRINOS MEDA OD UKUPNE MASE KOŠNICE",
-award:"1. nagrada – XVII Nacionalni pčelarski sajam 2026",
-patent:"PATENT U POSTUPKU – prijava podneta u Srbiji.",
-system:"REVOLUCIONARNI SISTEM ZA MERENJE PRINOSA MEDA",
-desc:"Omogućava odvajanje prinosa meda od ukupne mase košnice.",
-prototype:"PROTOTIP",
-prototype_text:"Jedinstvena vaga za košnice.",
-use:"KAKO SE KORISTI",
-use1:"Očitavanje SMS-om ili pozivom",
-use2:"Automatska obaveštenja",
-adv:"TEHNIČKE PREDNOSTI",
-adv1:"Čelična konstrukcija",
-adv2:"Kompatibilno sa svim košnicama",
-adv3:"Solarni rad",
-security:"BEZBEDNOST",
-sec1:"Zaštita od neovlašćene upotrebe",
-end1:"Jedinstveno rešenje",
-end2:"Jednostavno korišćenje",
-end3:"Modularni sistem"
-},
-
-fr:{
-title:"PREMIER SYSTÈME QUI SÉPARE LA PRODUCTION DE MIEL DE LA MASSE TOTALE DE LA RUCHE",
-award:"1er Prix – XVII Salon National d’Apiculture 2026",
-patent:"BREVET EN COURS – Déposé en Serbie.",
-system:"SYSTÈME RÉVOLUTIONNAIRE DE MESURE DU MIEL",
-desc:"Permet de séparer la production de miel.",
-prototype:"PROTOTYPE",
-prototype_text:"Balance unique pour ruche.",
-use:"UTILISATION",
-use1:"Lecture via SMS ou appel",
-use2:"Alertes automatiques",
-adv:"AVANTAGES TECHNIQUES",
-adv1:"Construction en acier",
-adv2:"Compatible avec toutes les ruches",
-adv3:"Fonctionnement solaire",
-security:"SÉCURITÉ",
-sec1:"Protection contre usage non autorisé",
-end1:"Solution unique",
-end2:"Facile à utiliser",
-end3:"Système modulaire"
-}
-
-};
-
-function setLang(lang){
-
-document.getElementById("title").innerText=texts[lang].title;
-document.getElementById("award").innerText=texts[lang].award;
-document.getElementById("patent").innerText=texts[lang].patent;
-document.getElementById("system").innerText=texts[lang].system;
-document.getElementById("desc").innerText=texts[lang].desc;
-document.getElementById("prototype").innerText=texts[lang].prototype;
-document.getElementById("prototype_text").innerText=texts[lang].prototype_text;
-document.getElementById("use").innerText=texts[lang].use;
-document.getElementById("use1").innerText=texts[lang].use1;
-document.getElementById("use2").innerText=texts[lang].use2;
-document.getElementById("adv").innerText=texts[lang].adv;
-document.getElementById("adv1").innerText=texts[lang].adv1;
-document.getElementById("adv2").innerText=texts[lang].adv2;
-document.getElementById("adv3").innerText=texts[lang].adv3;
-document.getElementById("security").innerText=texts[lang].security;
-document.getElementById("sec1").innerText=texts[lang].sec1;
-document.getElementById("end1").innerText=texts[lang].end1;
-document.getElementById("end2").innerText=texts[lang].end2;
-document.getElementById("end3").innerText=texts[lang].end3;
-
-}
-
-</script>
-
 </head>
 
-<body onload="setLang('en')">
+<body>
 
 <div class="container">
 
-<div class="lang-buttons">
-<button onclick="setLang('en')">English</button>
-<button onclick="setLang('sl')">Slovenščina</button>
-<button onclick="setLang('de')">Deutsch</button>
-<button onclick="setLang('it')">Italiano</button>
-<button onclick="setLang('hu')">Magyar</button>
-<button onclick="setLang('ro')">Română</button>
-<button onclick="setLang('zh')">中文</button>
-<button onclick="setLang('hr')">Hrvatski</button>
-<button onclick="setLang('sr')">Srpski</button>
-<button onclick="setLang('fr')">Français</button>
-</div>
-
-<h1 id="title"></h1>
-<h3 id="award"></h3>
-
-<p id="patent"></p>
-
-<h2 id="system"></h2>
-<p id="desc"></p>
-
-<h3 id="prototype"></h3>
-<p id="prototype_text"></p>
-
-<h3 id="use"></h3>
-<ul>
-<li id="use1"></li>
-<li id="use2"></li>
-</ul>
-
-<h3 id="adv"></h3>
-<ul>
-<li id="adv1"></li>
-<li id="adv2"></li>
-<li id="adv3"></li>
-</ul>
-
-<h3 id="security"></h3>
-<ul>
-<li id="sec1"></li>
-</ul>
-
-<ul>
-<li id="end1"></li>
-<li id="end2"></li>
-<li id="end3"></li>
-</ul>
-
-</div>
-
-</body>
-</html>
+<select onchange="setLang(this.value)">
+<option value="en">English</option>
+<option value="sl">Slovenščina</option>
+<option value="de">Deutsch</option>
+<option value="it">Italiano</option>
+<option value="hu">Magyar</option>
+<option value="ro">Română</option>
+<option value="zh">中文</option>
+<option value="hr
