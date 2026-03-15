@@ -6,51 +6,94 @@
 <title>Honey Yield Measurement System</title>
 
 <style>
+
 body{
-font-family: Arial, sans-serif;
+font-family: Arial, Helvetica, sans-serif;
 margin:0;
-background:#f5f5f5;
+background:#f4f4f4;
+color:#222;
+}
+
+header{
+background:#1a2a44;
+color:white;
+padding:15px;
 text-align:center;
 }
 
 .container{
-max-width:800px;
+max-width:900px;
 margin:auto;
 padding:20px;
 background:white;
 }
 
+select{
+width:100%;
+padding:10px;
+font-size:16px;
+margin-bottom:20px;
+}
+
 h1{
-font-size:26px;
+font-size:22px;
 }
 
 h2{
-color:#d89c00;
-}
-
-select{
-padding:10px;
-font-size:16px;
-margin:15px;
+margin-top:25px;
+color:#1a2a44;
 }
 
 ul{
-text-align:left;
-max-width:600px;
-margin:auto;
+padding-left:20px;
+}
+
+footer{
+margin-top:30px;
+padding:15px;
+text-align:center;
+background:#eee;
+font-size:14px;
 }
 
 @media (max-width:600px){
-h1{font-size:20px;}
+
+h1{
+font-size:20px;
 }
+
+}
+
 </style>
+
+<script>
+
+function changeLang(lang){
+
+document.querySelectorAll('.lang').forEach(el=>{
+el.style.display='none'
+})
+
+document.querySelectorAll('.'+lang).forEach(el=>{
+el.style.display='block'
+})
+
+}
+
+</script>
+
 </head>
 
-<body>
+<body onload="changeLang('en')">
+
+<header>
+<h1>Honey Yield Measurement System</h1>
+</header>
 
 <div class="container">
 
-<select onchange="setLang(this.value)">
+<select onchange="changeLang(this.value)">
+
 <option value="en">English</option>
 <option value="sl">Slovenščina</option>
 <option value="de">Deutsch</option>
@@ -61,306 +104,208 @@ h1{font-size:20px;}
 <option value="hr">Hrvatski</option>
 <option value="sr">Srpski</option>
 <option value="fr">Français</option>
+
 </select>
 
-<h1 id="title"></h1>
-<h2 id="award"></h2>
 
-<p id="patent"></p>
+<!-- ENGLISH -->
 
-<h3 id="system"></h3>
-<p id="desc"></p>
+<div class="lang en">
 
-<h3 id="prototype"></h3>
-<p id="prototype_text"></p>
+<h1>FIRST SYSTEM THAT SEPARATES HONEY YIELD FROM TOTAL HIVE MASS</h1>
 
-<h3 id="use"></h3>
-<ul id="use_list"></ul>
+<h2>PATENT PENDING</h2>
+<p>A patent application has been filed in Serbia.</p>
 
-<h3 id="tech"></h3>
-<ul id="tech_list"></ul>
+<h2>REVOLUTIONARY HONEY YIELD MEASUREMENT SYSTEM</h2>
+<p>For the first time enables separation of honey yield from total hive mass.</p>
 
-<h3 id="security"></h3>
-<ul id="sec_list"></ul>
+<h2>PROTOTYPE</h2>
+<p>Unique scale that measures only the hive body, individual supers, or the entire hive.</p>
+
+<h2>HOW TO USE</h2>
+<ul>
+<li>Reading via SMS or call</li>
+<li>Automatic alerts when target weight is reached or battery is low</li>
+</ul>
+
+<h2>TECHNICAL ADVANTAGES</h2>
+<ul>
+<li>Steel, robust construction</li>
+<li>Compatible with all hive types</li>
+<li>Unlimited operation with solar panel</li>
+</ul>
+
+<h2>SECURITY</h2>
+<ul>
+<li>Protection against unauthorized use</li>
+<li>Unique solution in the world</li>
+<li>Easy to operate</li>
+<li>Modular expandable system</li>
+</ul>
 
 </div>
 
-<script>
 
-const data={
+<!-- SLOVENIAN -->
 
-en:{
-title:"FIRST SYSTEM THAT SEPARATES HONEY YIELD FROM TOTAL HIVE MASS",
-award:"1st Prize – XVII National Beekeeping Fair 2026",
-patent:"Patent pending – A patent application has been filed in Serbia.",
-system:"Revolutionary Honey Yield Measurement System",
-desc:"For the first time enables separation of honey yield from total hive mass.",
-prototype:"Prototype",
-prototype_text:"Unique scale that measures only the hive body, individual supers, or the entire hive.",
-use:"How to use?",
-use_list:[
-"Reading via SMS or call",
-"Automatic alerts when target weight is reached or battery is low"
-],
-tech:"Technical Advantages",
-tech_list:[
-"Steel, robust construction",
-"Compatible with all hive types",
-"Unlimited operation with solar panel"
-],
-security:"Security",
-sec_list:[
-"Protection against unauthorized use",
-"Unique solution in the world",
-"Easy to operate",
-"Modular expandable system"
-]
-},
+<div class="lang sl">
 
-sl:{
-title:"PRVI SISTEM, KI LOČUJE DONOS MEDU OD SKUPNE MASE PANJA",
-award:"1. nagrada – XVII nacionalni čebelarski sejem 2026",
-patent:"Patent v postopku prijave – prijava vložena v Srbiji.",
-system:"Revolucionarni sistem za merjenje donosa medu",
-desc:"Prvič omogoča ločevanje donosa medu od skupne mase panja.",
-prototype:"Prototip",
-prototype_text:"Edinstvena tehtnica za merjenje telesa panja, medišč ali celotnega panja.",
-use:"Kako se uporablja?",
-use_list:[
-"Odčitavanje preko SMS ali klica",
-"Samodejna obvestila ob doseženi teži ali nizki bateriji"
-],
-tech:"Tehnične prednosti",
-tech_list:[
-"Jeklena robustna konstrukcija",
-"Združljivo z vsemi tipi panjev",
-"Neomejeno delovanje s solarnim panelom"
-],
-security:"Varnost",
-sec_list:[
-"Zaščita pred nepooblaščeno uporabo",
-"Edinstvena rešitev na svetu",
-"Enostavna uporaba",
-"Modularni razširljiv sistem"
-]
-},
+<h1>PRVI SISTEM KI LOČUJE DONOS MEDU OD SKUPNE MASE PANJA</h1>
 
-de:{
-title:"ERSTES SYSTEM ZUR TRENNUNG DES HONIGERTRAGS VON DER GESAMTSTOCKMASSE",
-award:"1. Preis – XVII Nationale Imkermesse 2026",
-patent:"Patent angemeldet in Serbien.",
-system:"Revolutionäres System zur Messung des Honigertrags",
-desc:"Ermöglicht erstmals die Trennung des Honigertrags von der Gesamtmasse des Bienenstocks.",
-prototype:"Prototyp",
-prototype_text:"Einzigartige Waage zur Messung des Bienenstocks, einzelner Honigräume oder des gesamten Stocks.",
-use:"Anwendung",
-use_list:[
-"Ablesen per SMS oder Anruf",
-"Automatische Warnungen bei Zielgewicht oder niedrigem Akku"
-],
-tech:"Technische Vorteile",
-tech_list:[
-"Stabile Stahlkonstruktion",
-"Kompatibel mit allen Beutentypen",
-"Betrieb mit Solarpanel möglich"
-],
-security:"Sicherheit",
-sec_list:[
-"Schutz vor unbefugter Nutzung",
-"Einzigartige Lösung weltweit",
-"Einfache Bedienung",
-"Modulares System"
-]
-},
+<h2>PATENT V POSTOPKU</h2>
+<p>Patentna prijava je bila vložena v Srbiji.</p>
 
-it:{
-title:"PRIMO SISTEMA CHE SEPARA LA PRODUZIONE DI MIELE DALLA MASSA TOTALE DELL'ALVEARE",
-award:"1° premio – Fiera Nazionale Apicoltura 2026",
-patent:"Brevetto in fase di registrazione in Serbia.",
-system:"Sistema rivoluzionario di misurazione della produzione di miele",
-desc:"Per la prima volta separa la produzione di miele dalla massa totale dell'alveare.",
-prototype:"Prototipo",
-prototype_text:"Bilancia unica che misura il corpo dell'alveare o i melari.",
-use:"Uso",
-use_list:[
-"Lettura tramite SMS o chiamata",
-"Avvisi automatici"
-],
-tech:"Vantaggi tecnici",
-tech_list:[
-"Struttura in acciaio",
-"Compatibile con tutti gli alveari",
-"Funzionamento con pannello solare"
-],
-security:"Sicurezza",
-sec_list:[
-"Protezione contro uso non autorizzato",
-"Soluzione unica",
-"Sistema modulare"
-]
-},
+<h2>REVOLUCIONARNI SISTEM MERJENJA DONOSA MEDU</h2>
+<p>Prvič omogoča ločevanje donosa medu od skupne mase panja.</p>
 
-hu:{
-title:"AZ ELSŐ RENDSZER, AMELY ELVÁLASZTJA A MÉZHOZAMOT A KAPTÁR TELJES TÖMEGÉTŐL",
-award:"1. díj – XVII Nemzeti Méhészeti Vásár 2026",
-patent:"Szabadalmi bejelentés Szerbiában.",
-system:"Forradalmi mézhozam mérési rendszer",
-desc:"Először teszi lehetővé a mézhozam elkülönítését.",
-prototype:"Prototípus",
-prototype_text:"Egyedi mérleg a kaptár mérésére.",
-use:"Használat",
-use_list:[
-"SMS vagy hívás",
-"Automatikus riasztások"
-],
-tech:"Műszaki előnyök",
-tech_list:[
-"Acél szerkezet",
-"Minden kaptárhoz kompatibilis",
-"Napelemmel működik"
-],
-security:"Biztonság",
-sec_list:[
-"Védelem illetéktelen használat ellen",
-"Egyedi megoldás",
-"Moduláris rendszer"
-]
-},
+<h2>PROTOTIP</h2>
+<p>Edinstvena tehtnica meri samo telo panja, posamezne mediščne naklade ali celoten panj.</p>
 
-zh:{
-title:"首个将蜂蜜产量与蜂箱总重量分离的系统",
-award:"一等奖 – 2026国家养蜂展",
-patent:"专利申请已在塞尔维亚提交",
-system:"革命性的蜂蜜产量测量系统",
-desc:"首次实现蜂蜜产量与蜂箱总重量的分离。",
-prototype:"原型",
-prototype_text:"独特的蜂箱称重系统。",
-use:"使用方法",
-use_list:[
-"短信或电话读取",
-"自动警报"
-],
-tech:"技术优势",
-tech_list:[
-"钢结构",
-"兼容所有蜂箱",
-"太阳能供电"
-],
-security:"安全",
-sec_list:[
-"防止未经授权使用",
-"全球独特解决方案",
-"模块化系统"
-]
-},
+<h2>KAKO SE UPORABLJA</h2>
+<ul>
+<li>Odčitavanje preko SMS ali klica</li>
+<li>Samodejna obvestila ob doseženi teži ali nizki bateriji</li>
+</ul>
 
-hr:{
-title:"PRVI SUSTAV KOJI ODVAJA PRINOS MEDA OD UKUPNE MASE KOŠNICE",
-award:"1. nagrada – Nacionalni pčelarski sajam 2026",
-patent:"Patent prijavljen u Srbiji.",
-system:"Revolucionarni sustav mjerenja prinosa meda",
-desc:"Prvi put omogućuje odvajanje prinosa meda od ukupne mase košnice.",
-prototype:"Prototip",
-prototype_text:"Jedinstvena vaga za košnicu.",
-use:"Kako koristiti",
-use_list:[
-"Očitavanje SMS ili pozivom",
-"Automatske obavijesti"
-],
-tech:"Tehničke prednosti",
-tech_list:[
-"Čelična konstrukcija",
-"Kompatibilno sa svim košnicama",
-"Solarno napajanje"
-],
-security:"Sigurnost",
-sec_list:[
-"Zaštita od neovlaštene upotrebe",
-"Jedinstveno rješenje",
-"Modularni sustav"
-]
-},
+<h2>TEHNIČNE PREDNOSTI</h2>
+<ul>
+<li>Jeklena robustna konstrukcija</li>
+<li>Združljivo z vsemi tipi panjev</li>
+<li>Neomejeno delovanje s solarnim panelom</li>
+</ul>
 
-sr:{
-title:"PRVI SISTEM KOJI ODVAJA PRINOS MEDA OD UKUPNE MASE KOŠNICE",
-award:"1. nagrada – Nacionalni pčelarski sajam 2026",
-patent:"Patent u postupku prijave u Srbiji.",
-system:"Revolucionarni sistem merenja prinosa meda",
-desc:"Prvi put omogućava razdvajanje prinosa meda od ukupne mase košnice.",
-prototype:"Prototip",
-prototype_text:"Jedinstvena vaga za košnicu.",
-use:"Kako se koristi",
-use_list:[
-"Očitavanje SMS ili pozivom",
-"Automatska obaveštenja"
-],
-tech:"Tehničke prednosti",
-tech_list:[
-"Čelična konstrukcija",
-"Kompatibilno sa svim košnicama",
-"Solarno napajanje"
-],
-security:"Bezbednost",
-sec_list:[
-"Zaštita od neovlašćene upotrebe",
-"Jedinstveno rešenje",
-"Modularni sistem"
-]
-},
+<h2>VARNOST</h2>
+<ul>
+<li>Zaščita pred nepooblaščeno uporabo</li>
+<li>Edinstvena rešitev na svetu</li>
+<li>Enostavna uporaba</li>
+<li>Modularni sistem</li>
+</ul>
 
-fr:{
-title:"PREMIER SYSTÈME QUI SÉPARE LE RENDEMENT EN MIEL DE LA MASSE TOTALE DE LA RUCHE",
-award:"1er prix – Salon National Apicole 2026",
-patent:"Brevet déposé en Serbie.",
-system:"Système révolutionnaire de mesure du rendement du miel",
-desc:"Permet pour la première fois de séparer le rendement du miel.",
-prototype:"Prototype",
-prototype_text:"Balance unique pour ruche.",
-use:"Utilisation",
-use_list:[
-"Lecture par SMS ou appel",
-"Alertes automatiques"
-],
-tech:"Avantages techniques",
-tech_list:[
-"Structure en acier",
-"Compatible avec toutes les ruches",
-"Fonctionnement solaire"
-],
-security:"Sécurité",
-sec_list:[
-"Protection contre usage non autorisé",
-"Solution unique",
-"Système modulaire"
-]
-}
+</div>
 
-}
 
-function setLang(lang){
+<!-- GERMAN -->
 
-let t=data[lang]
+<div class="lang de">
 
-title.innerText=t.title
-award.innerText=t.award
-patent.innerText=t.patent
-system.innerText=t.system
-desc.innerText=t.desc
-prototype.innerText=t.prototype
-prototype_text.innerText=t.prototype_text
-use.innerText=t.use
-tech.innerText=t.tech
-security.innerText=t.security
+<h1>ERSTES SYSTEM DAS DEN HONIGERTRAG VON DER GESAMTBIENENSTOCKMASSE TRENNT</h1>
 
-use_list.innerHTML=t.use_list.map(i=>`<li>${i}</li>`).join("")
-tech_list.innerHTML=t.tech_list.map(i=>`<li>${i}</li>`).join("")
-sec_list.innerHTML=t.sec_list.map(i=>`<li>${i}</li>`).join("")
+<h2>PATENT ANGEMELDET</h2>
+<p>Eine Patentanmeldung wurde in Serbien eingereicht.</p>
 
-}
+<h2>REVOLUTIONÄRES SYSTEM ZUR MESSUNG DES HONIGERTRAGS</h2>
+<p>Ermöglicht erstmals die Trennung des Honigertrags von der Gesamtmasse des Bienenstocks.</p>
 
-setLang("en")
+<h2>PROTOTYP</h2>
+<p>Einzigartige Waage die nur den Bienenstockkörper, einzelne Honigräume oder den gesamten Stock misst.</p>
 
-</script>
+<h2>ANWENDUNG</h2>
+<ul>
+<li>Ablesen per SMS oder Anruf</li>
+<li>Automatische Warnung bei Zielgewicht oder niedriger Batterie</li>
+</ul>
+
+<h2>TECHNISCHE VORTEILE</h2>
+<ul>
+<li>Robuste Stahlkonstruktion</li>
+<li>Kompatibel mit allen Bienenstocktypen</li>
+<li>Unbegrenzter Betrieb mit Solarpanel</li>
+</ul>
+
+</div>
+
+
+<!-- ITALIAN -->
+
+<div class="lang it">
+
+<h1>PRIMO SISTEMA CHE SEPARA LA PRODUZIONE DI MIELE DALLA MASSA TOTALE DELL'ALVEARE</h1>
+
+<h2>BREVETTO IN CORSO</h2>
+<p>Domanda di brevetto depositata in Serbia.</p>
+
+<h2>SISTEMA RIVOLUZIONARIO DI MISURAZIONE DEL MIELE</h2>
+<p>Permette per la prima volta di separare la resa del miele dalla massa totale dell'alveare.</p>
+
+</div>
+
+
+<!-- HUNGARIAN -->
+
+<div class="lang hu">
+
+<h1>AZ ELSŐ RENDSZER AMELY ELKÜLÖNÍTI A MÉZ HOZAMÁT A KAPTÁR TELJES TÖMEGÉTŐL</h1>
+
+<p>Szabadalom bejelentve Szerbiában.</p>
+
+</div>
+
+
+<!-- ROMANIAN -->
+
+<div class="lang ro">
+
+<h1>PRIMUL SISTEM CARE SEPARĂ PRODUCȚIA DE MIERE DE MASA TOTALĂ A STUPULUI</h1>
+
+<p>Cerere de brevet depusă în Serbia.</p>
+
+</div>
+
+
+<!-- CHINESE -->
+
+<div class="lang zh">
+
+<h1>世界首个将蜂蜜产量与蜂箱总重量分离的系统</h1>
+
+<p>专利申请已在塞尔维亚提交。</p>
+
+</div>
+
+
+<!-- CROATIAN -->
+
+<div class="lang hr">
+
+<h1>PRVI SUSTAV KOJI ODVAJA PRINOS MEDA OD UKUPNE MASE KOŠNICE</h1>
+
+<p>Patentna prijava podnesena u Srbiji.</p>
+
+</div>
+
+
+<!-- SERBIAN -->
+
+<div class="lang sr">
+
+<h1>PRVI SISTEM KOJI ODVAJA PRINOS MEDA OD UKUPNE MASE KOŠNICE</h1>
+
+<p>Patentna prijava podneta u Srbiji.</p>
+
+</div>
+
+
+<!-- FRENCH -->
+
+<div class="lang fr">
+
+<h1>PREMIER SYSTÈME QUI SÉPARE LE RENDEMENT EN MIEL DE LA MASSE TOTALE DE LA RUCHE</h1>
+
+<p>Une demande de brevet a été déposée en Serbie.</p>
+
+</div>
+
+
+<footer>
+
+Contact:  
+<b>honeysupers78@gmail.com</b>
+
+</footer>
+
+</div>
 
 </body>
 </html>
